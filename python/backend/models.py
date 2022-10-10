@@ -8,6 +8,9 @@ class Game(models.Model):
     title = models.CharField(max_length=200)
     bannerUrl = models.URLField()
 
+    def __str__(self):
+        return self.title
+
 
 class Ad(models.Model):
     WEEK_DAYS = (
@@ -30,3 +33,6 @@ class Ad(models.Model):
     hourEnd = models.PositiveIntegerField()
     useVoiceChannel = models.BooleanField(default=False)
     createdAt = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
